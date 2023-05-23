@@ -3,7 +3,7 @@ const crypto = require('crypto');
 class Game {
   constructor(moves) {
     this.moves = moves;
-    this.key = crypto.randomBytes(32).toString('hex'); // Generate a 256-bit key
+    this.key = crypto.randomBytes(32).toString('hex'); 
   }
 
   generateHMAC(move) {
@@ -141,10 +141,8 @@ class Game {
   }
 }
 
-// Get command line arguments
 const args = process.argv.slice(2);
 
-// Check if the number of arguments is valid
 if (args.length < 3 || args.length % 2 === 0 || new Set(args).size !== args.length) {
   console.error('Incorrect number of arguments or repeating strings.');
   console.error('Example usage: node game.js rock paper scissors');
